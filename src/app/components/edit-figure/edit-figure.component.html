@@ -1,0 +1,25 @@
+<div>
+    <div>       
+        <div class="create-figure-container">
+            <h4>{{ title }}</h4>
+            <form [formGroup]="createFigureForm" (ngSubmit)="onSubmit()">
+                <div class="select-group">
+                    <label for="idFigureGroup" class="select-group-label">Selecciona grupo</label>
+                    <select  formControlName="idFigureGroup">
+                        <option *ngFor="let group of dataGroups" [value]="group.id">
+                            {{group.name}}
+                          </option>
+                    </select>
+                </div>
+                <div class="board create-board">
+                    <div class="figure-create-title">
+                        <label for="figureName" class="figure-create-label">Nombre Figura</label>
+                        <input type="text" formControlName="figureName"/>
+                    </div>
+                    <div *ngFor="let position of positionsWinner; index as i" class="cell" [ngClass]="[i === 12 ? 'medium-cell' : '', position ? 'selected' : 'no-selected']" (click)="onClickCell(i)"></div>
+                </div>
+                <button>Editar</button>
+            </form>
+        </div>
+    </div>
+</div>

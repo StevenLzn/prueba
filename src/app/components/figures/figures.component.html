@@ -1,0 +1,12 @@
+<button [routerLink]="['/new-figure']" class="button-new-figure">+</button>
+<div *ngIf="dataFigures">
+    <div *ngFor="let figure of dataFigures;  index as j" class="board">
+        <h1 class="board-title"> {{ figure.name }}
+            <div class="figure-buttons-container">
+                <button class="figure-button" [routerLink]="['/edit-figure', figure.id]"> Editar</button>
+                <button class="figure-button" (click)="onClickRemove(j)"> Eliminar</button>
+            </div>
+        </h1>
+        <div *ngFor="let position of figure.positionsWinner; index as i" [ngClass]="[i === 12 ? 'medium-cell' : '', position ? 'selected' : 'no-selected']" class="cell"></div>
+    </div>
+</div>

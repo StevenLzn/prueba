@@ -1,0 +1,7 @@
+<div *ngIf='dataProfile' class="profile-container">
+    <h2> Nombres: <p class="profile-data">{{ dataProfile.names}}</p></h2>
+    <h2> Apellidos: <p class="profile-data">{{ dataProfile.lastNames}}</p></h2>
+    <h2> Nombre usuario: <p class="profile-data">{{ dataProfile.username}}</p></h2>
+    <h2> Rol: <p class="profile-data">{{ dataProfile.rolDTO.name}}</p></h2>
+    <h2> Fecha de creación: <p class="profile-data">{{ dataProfile.createdAt | date:'mediumDate'}}</p></h2>
+</div>

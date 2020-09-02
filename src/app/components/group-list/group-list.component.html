@@ -1,0 +1,6 @@
+<h1> {{ title}}</h1>
+<div *ngIf="dataGroups">
+    <div *ngFor="let group of dataGroups">
+        <h1> {{ group.name }}</h1>
+    </div>
+</div>
